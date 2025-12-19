@@ -1,84 +1,98 @@
 package main;
 
-//IMPORTACIONES
-	import java.util.InputMismatchException;
-	import java.util.Scanner;
-	
-//Principal
-	
+	//IMPORTS
+
+		import java.util.InputMismatchException;
+		import java.util.Scanner;
+		
 public class Main {
 	static final int INI_INT = 0;
-	static final String SEPARADOR ="\n--------------------";
+	static final String DIVIDER ="\n--------------------";
 	
-	//METODOS
+	//METHODS
 	
-		public static int leerInt(Scanner entrada) {
+		public static int readInt(Scanner input) {
 			int output = INI_INT;
 			try {
-				output = entrada.nextInt();
+				output = input.nextInt();
 			} catch (InputMismatchException ex) {
 				output = INI_INT;
-				entrada.next();
-				System.out.println("Error, introduce solo números, el programa terminara");
+				input.next();
+				System.out.println("ERROR! only numbers are allowed here, program will end now");
 			}
 			return output;
 		}
-		public static int generarNum(int min, int max) {
+		
+		public static int numGen(int min, int max) {
+			
+			//This method generates a number between a range that is given via parameters
+			
 			int output;
 			output = (int) (Math.random() * (max-min+1)+min);
 			return output;
 		}
 		
-		public static boolean comprobarPar(int num) {
-			boolean output= false;
-			if(num %2 == INI_INT) {
-				output = true; // True es PAR
-			}else {
-				output = false; //False es IMPAR
-			}
-			return output;
+		public static boolean checkEven(int num) {
+			
+			/**This method checks that every number given to the method is even or not
+			 * and returns true if so, false if not
+			 */
+			
+			return num % 2 == 0;
 		}
 		
-		public static void rellenarArrayimpar(int[] impares) {
-			boolean valid = false;
+		public static void fillOdds(int[] odds) {
+			
+			/**This method fills an array with numbers randomly generated 
+			 * those numbers are being checked to be odd before being
+			 * introduced into the Array
+			 */
+			
 			int temp = INI_INT;
-			for (int i = 0; i < impares.length; i++) {
-		        do {
-		            valid = false;
-		            temp = generarNum(5,50); 
-		            if (!comprobarPar(temp)) {
-		                impares[i] = temp;
-		                valid = true;
-		            }
-		        } while (!valid);
-		    }
-		}
-		public static void rellenarArraypar( int[] pares, int tam){
-			boolean valid = false;
-			int temp = INI_INT;
-			for (int i = INI_INT; i < pares.length; i++) {
-		        do {
-		            valid = false;
-		            temp = generarNum(1,tam); 
-		            if (comprobarPar(temp)) {                    
-		                pares[i] = temp;
-		                valid = true;
-		            }
-		        } while (!valid);
-		    }
-		}
-		public static void mostrarArraypar(int[] pares) {
-			for (int i = 0; i < pares.length; i++) {
-				System.out.print("[" + i  + "]="+ pares[i]+ " | ");
+			for (int i = 0; i < odds.length; i++) {
+				do {
+					temp = numGen(5, 50);
+				} while (checkEven(temp));
+				odds[i] = temp;
 			}
+			
 		}
-		public static void mostrarArrayImpar(int[] impares) {
-			for (int i = 0; i < impares.length; i++) {
-				System.out.print("[" + i  + "]="+ impares[i]+ " | ");
+		
+		public static void fillEvens( int[] evens){
+			
+			/**This method fills an array with numbers randomly generated 
+			 * those numbers are being checked to be even before being
+			 * introduced into the Array
+			 */
+			
+			int temp = INI_INT;
+			for (int i = 0; i < evens.length; i++) {
+				do {
+					temp = numGen(5, 50);
+				} while (!checkEven(temp));
+				evens[i] = temp;
+			}
+			
+		}
+		
+		
+		public static void showArray(int[] array) {
+			
+			//This method shows all the values stored in the array
+			
+			for (int i = 0; i < array.length; i++) {
+				System.out.print("[" + i  + "]="+ array[i]+ " | ");
 			}
 		}
 		
-		public static int numeroMenor(int[] array) {
+		public static int smallerNumber(int[] array) {
+			
+			/**This method takes all the numbers in the array and 
+			 * compares each one to the one right after in order 
+			 * to find the smaller one, that number is being returned 
+			 * only after all the values have been checked
+			 */
+			
 			int output = array[0];
 			for (int i = 1; i < array.length; i++) {
 			    if (array[i] < output) {
@@ -87,7 +101,15 @@ public class Main {
 			}
 			return output;
 		}
-		public static int numeroMayor(int[] array) {
+		
+		public static int greaterNumber(int[] array) {
+			
+			/**This method takes all the numbers in the array and 
+			 * compares each one to the one right after in order 
+			 * to find the greater one, that number is being returned 
+			 * only after all the values have been checked
+			 */
+			
 		int output = array[0];
 		for (int i = 1; i < array.length; i++) {
 		    if (array[i] > output) {
@@ -96,7 +118,15 @@ public class Main {
 		}
 		return output;
 		}
-		public static int mcd(int a, int b) {
+		
+		
+		public static int gcd(int a, int b) {
+			
+			/**This method uses the Euclide´s algorithm to get the
+			 * Greatest common divisor
+			 */
+			
+			
 		   int temp = INI_INT;
 		    while (b != INI_INT) {
 		        temp = b;
@@ -111,58 +141,60 @@ public class Main {
 		
 		public static void main(String[] args) {
 			
-		//Declaracion de entrada y variables
+		//Declaration of variables
 			
-			Scanner entrada = new Scanner (System.in);
-			int tam_impares,tam_pares;
-			tam_impares =  tam_pares = INI_INT;
+			Scanner input = new Scanner (System.in);
+			int odds_size,evens_size, evensSmall, evensGreat;
+			odds_size =  evens_size = evensSmall = evensGreat = INI_INT;
 			
 			
-		//Creacion y relleno Array Impar
+		//Creation of the Odd numbers Array
 			
-			System.out.println("Introduce el tamaño del Array que quieres crear");
-			tam_impares = leerInt(entrada);
-			if(tam_impares > INI_INT) {
-				int[] impares = new int[tam_impares];
-				rellenarArrayimpar(impares);
-				
-			//Creacion y relleno Array par
-				
-				tam_pares = numeroMenor(impares);
-				int[] pares = new int[tam_pares];
-				rellenarArraypar(pares,tam_pares);
+			System.out.println("Please, type the size of the Array you want to create");
+			odds_size = readInt(input);
 			
-			//Mostramos array y numeros mayores y menores
+			if(odds_size > INI_INT) {
+				int[] odds = new int[odds_size];
+				fillOdds(odds);
 				
-				System.out.println(SEPARADOR);
+		//Creation of the even numbers Array
 				
-				System.out.println("Array Impares");
-				mostrarArrayImpar(impares);
+				evens_size = smallerNumber(odds);
+				int[] evens = new int[evens_size];
+				fillEvens(evens);
+			
+			//Showing both Arrays and the greatest and smaller numbers of each and the gcd between both
 				
-				System.out.println(SEPARADOR);
+				System.out.println(DIVIDER);
 				
-				System.out.println("Array pares");
-				mostrarArraypar(pares);
+				System.out.println("Array containing odd numbers");
+				showArray(odds);
 				
-				System.out.println(SEPARADOR);
+				System.out.println(DIVIDER);
 				
-				System.out.println("El número menor del array impar es " + numeroMenor(impares));
-				System.out.println("El número mayor del array impar es " + numeroMayor(impares));
+				System.out.println("Array containing even numbers") ;
+				showArray(evens);
 				
-				System.out.println(SEPARADOR);
+				System.out.println(DIVIDER);
 				
-				System.out.println("El número menor del array par es " + numeroMenor(pares));
-				System.out.println("El número mayor del array par es " + numeroMayor(pares));
+				System.out.println("The greatest number of the Array containing odds is : " + greaterNumber(odds));
+				System.out.println("The smallest number of the Array containing odds is :" + (smallerNumber(odds)));
 				
-				System.out.println(SEPARADOR);
+				System.out.println(DIVIDER);
 				
-				System.out.println("El Máximo Común Divisor de " + numeroMenor(pares)+ " y " + numeroMayor(pares)+ " es:  "+  mcd(numeroMenor(pares),numeroMayor(pares)));
+			
+				System.out.println("The greatest number of the Array containing evens is :" + (evensGreat =greaterNumber(evens)));
+				System.out.println("The smallest number of the Array containing evens is :" +(evensSmall = smallerNumber(evens)));
+				
+				System.out.println(DIVIDER);
+				
+				System.out.println("The greatest common divisor of " + smallerNumber(evens)+ " and " + greaterNumber(evens)+ " is:  "+  gcd(evensSmall,evensGreat));
 				
 				
-			}else if(tam_impares != INI_INT){
-				System.out.println("Tamaño invalido, el programa termina");
+			}else if(odds_size != INI_INT){
+				System.out.println("Invalid size, program will end now");
 			}
 			
-			entrada.close();
+			input.close();
 		}
 }

@@ -57,7 +57,7 @@ The greatest number of the Array containing evens is :6
 
 The smallest number of the Array containing evens is :2
 
-The greatest common divisor of 6 and 44 is: 2
+The greatest common divisor of 6 and 4 is: 2
 
 ## Key Features
 - **Input validation** catches non-numeric input

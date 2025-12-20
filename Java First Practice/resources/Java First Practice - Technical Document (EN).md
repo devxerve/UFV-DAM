@@ -19,13 +19,21 @@ Shows both arrays, min/max per array, GCD(even_min, even_max)
 
 Main.java (200 lines, 9 methods)
 ├── readInt(Scanner) → Validates numeric input, returns 0 on error
+
 ├── numGen(min,max) → Random integer generator (inclusive range)
+
 ├── checkEven(num) → Returns true if even (num % 2 == 0)
+
 ├── fillOdds(odds[]) → Fills with random odds 5-50 using do-while
+
 ├── fillEvens(evens[]) → Fills with random evens 5-50 using do-while
+
 ├── showArray(array[]) → Prints "[index]=value | " format
+
 ├── smallerNumber(array[]) → Linear search minimum (O(n))
+
 ├── greaterNumber(array[]) → Linear search maximum (O(n))
+
 └── gcd(a,b) → Euclid's algorithm (while b != 0)
 
 ## Sample Output
@@ -33,13 +41,13 @@ Main.java (200 lines, 9 methods)
 Please, type the size of the Array you want to create
 5
 Array containing odd numbers
-=17 | =23 | =41 | =7 | =35 |
+[0] =17 |[1] =23 | [2] =41 | [3] =7 | [4] =35 |
 Array containing even numbers
-=12 | =28 | =6 | =44 | =18 |
+[0] =2 | [1] =2 | [2] =6 | [3] =4 | [4] =2 | [5] = 6 | [6] = 2
 The greatest number of the Array containing odds is : 41
 The smallest number of the Array containing odds is :7
-The greatest number of the Array containing evens is :44
-The smallest number of the Array containing evens is :6
+The greatest number of the Array containing evens is :6
+The smallest number of the Array containing evens is :2
 
 The greatest common divisor of 6 and 44 is: 2
 

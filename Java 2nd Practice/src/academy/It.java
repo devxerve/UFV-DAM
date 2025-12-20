@@ -15,7 +15,7 @@ public class It {
 	}
 	
 	public static boolean checkCapacity(int surface ,int users) {
-		return ((surface/users) <=1);
+		return ((surface/users) <=1); 
 	}
 	
 	public static void unvalidCapacity(int surface ,int users) {

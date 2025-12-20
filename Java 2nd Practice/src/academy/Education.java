@@ -13,7 +13,7 @@ public class Education {
 	}
 	
 	public static int getCounter() {
-		return Education.counter;
+		return Education.counter; 
 	}
 	
 	public static boolean checkCapacity(int surface ,int users) {

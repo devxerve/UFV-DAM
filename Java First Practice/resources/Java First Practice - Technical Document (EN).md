@@ -41,12 +41,20 @@ Main.java (200 lines, 9 methods)
 Please, type the size of the Array you want to create
 5
 Array containing odd numbers
+
 [0] =17 |[1] =23 | [2] =41 | [3] =7 | [4] =35 |
+
 Array containing even numbers
+
 [0] =2 | [1] =2 | [2] =6 | [3] =4 | [4] =2 | [5] = 6 | [6] = 2
+
+
 The greatest number of the Array containing odds is : 41
+
 The smallest number of the Array containing odds is :7
+
 The greatest number of the Array containing evens is :6
+
 The smallest number of the Array containing evens is :2
 
 The greatest common divisor of 6 and 44 is: 2

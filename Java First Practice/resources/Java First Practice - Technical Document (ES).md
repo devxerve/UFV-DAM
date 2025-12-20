@@ -16,14 +16,23 @@ El usuario introduce el tamaño del array impar (>0) con gestión de errores.
 ## Estructura del Código  
 
 **Main.java** (200 líneas, 9 métodos)  
-├── readInt(Scanner) → Valida la entrada numérica, devuelve 0 en caso de error  
+├── readInt(Scanner) → Valida la entrada numérica, devuelve 0 en caso de error 
+
+
 ├── numGen(min, max) → Generador de enteros aleatorios (rango inclusivo)
+
 ├── checkEven(num) → Devuelve true si es par (num % 2 == 0)  
+
 ├── fillOdds(odds[]) → Rellena con números impares aleatorios (5–50) usando *do-while* 
+
 ├── fillEvens(evens[]) → Rellena con números pares aleatorios (5–50) usando *do-while*
+
 ├── showArray(array[]) → Imprime en formato "[índice]=valor | "  
+
 ├── smallerNumber(array[]) → Búsqueda lineal para el valor mínimo (O(n))  
+
 ├── greaterNumber(array[]) → Búsqueda lineal para el valor máximo (O(n))  
+
 └── gcd(a, b) → Algoritmo de Euclides (while b != 0)
 
 ## Ejemplo de Salida  
@@ -31,18 +40,24 @@ El usuario introduce el tamaño del array impar (>0) con gestión de errores.
 Por favor, introduce el tamaño del array que deseas crear:  
 5  
 
-Array de números impares  
-=17 | =23 | =41 | =7 | =35 |  
 
-Array de números pares  
-=12 | =28 | =6 | =44 | =18 |  
+Array de numeros Impares
 
-El número mayor del array impar es: 41  
-El número menor del array impar es: 7  
-El número mayor del array par es: 44  
-El número menor del array par es: 6  
+[0] =17 |[1] =23 | [2] =41 | [3] =7 | [4] =35 |
 
-El máximo común divisor de 6 y 44 es: 2  
+Array de numeros pares
+
+[0] =2 | [1] =2 | [2] =6 | [3] =4 | [4] =2 | [5] = 6 | [6] = 2
+
+El numero mayor del Array que contiene Impares es :  41
+
+El numero menor del Array que contiene Impares es : 7
+
+El numero mayor del Array que contiene Pares es : 6
+
+El numero menor del Array que contiene Pares es :2
+
+El máximo común divisor de 6 y 4es: 2  
 
 ## Características Principales  
 - **Validación de entrada** para prevenir datos no numéricos.  

@@ -163,7 +163,7 @@ public class Main {
 				int[] evens = new int[evens_size];
 				fillEvens(evens);
 			
-			//Showing both Arrays and the greatest and smaller numbers of each and the gcd between both
+		//Showing both Arrays and the greatest and smaller numbers of each and the gcd between both
 				
 				System.out.println(DIVIDER);
 				
@@ -177,14 +177,14 @@ public class Main {
 				
 				System.out.println(DIVIDER);
 				
-				System.out.println("The greatest number of the Array containing odds is : " + greaterNumber(odds));
-				System.out.println("The smallest number of the Array containing odds is :" + (smallerNumber(odds)));
+				System.out.println("The greatest number of the Array containing odds is: " + greaterNumber(odds));
+				System.out.println("The smallest number of the Array containing odds is: " + (smallerNumber(odds)));
 				
 				System.out.println(DIVIDER);
 				
 			
-				System.out.println("The greatest number of the Array containing evens is :" + (evensGreat =greaterNumber(evens)));
-				System.out.println("The smallest number of the Array containing evens is :" +(evensSmall = smallerNumber(evens)));
+				System.out.println("The greatest number of the Array containing evens is: " + (evensGreat =greaterNumber(evens)));
+				System.out.println("The smallest number of the Array containing evens is: " +(evensSmall = smallerNumber(evens)));
 				
 				System.out.println(DIVIDER);
 				
@@ -192,7 +192,9 @@ public class Main {
 				
 				
 			}else if(odds_size != INI_INT){
+				
 				System.out.println("Invalid size, program will end now");
+				
 			}
 			
 			input.close();

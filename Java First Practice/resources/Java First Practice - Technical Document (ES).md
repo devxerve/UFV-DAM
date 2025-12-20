@@ -57,7 +57,7 @@ El numero mayor del Array que contiene Pares es : 6
 
 El numero menor del Array que contiene Pares es :2
 
-El máximo común divisor de 6 y 4es: 2  
+El máximo común divisor de 6 y 4 es: 2  
 
 ## Características Principales  
 - **Validación de entrada** para prevenir datos no numéricos.  

@@ -68,7 +68,7 @@ public class Main {
 			int temp = INI_INT;
 			for (int i = 0; i < evens.length; i++) {
 				do {
-					temp = numGen(5, 50);
+					temp = numGen(5, evens.length);
 				} while (!checkEven(temp));
 				evens[i] = temp;
 			}

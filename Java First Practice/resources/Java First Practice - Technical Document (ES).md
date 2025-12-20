@@ -2,7 +2,7 @@
 **Práctica Java | Universidad Francisco de Vitoria**
 
 ## Descripción  
-Genera dos arrays: **números impares** (rango aleatorio 5–50) y **números pares** (rango 5–50, con tamaño igual al valor mínimo del array impar).  
+Genera dos arrays: **números impares** (rango aleatorio 5–50) y **números pares** (rango 1-tamaño, con tamaño igual al valor mínimo del array impar).  
 Muestra ambos arrays en formato indexado, los valores mínimo y máximo de cada uno, y el **MCD (máximo común divisor)** entre el mínimo y el máximo del array par usando el **algoritmo de Euclides**.
 
 ## Funcionamiento  
@@ -10,7 +10,7 @@ El usuario introduce el tamaño del array impar (>0) con gestión de errores.
 
 - Llena el array impar con números aleatorios impares (rango 5–50).  
 - El tamaño del array par será igual al número más pequeño encontrado en el array impar.  
-- Llena el array par con números aleatorios pares (rango 5–50).  
+- Llena el array par con números aleatorios pares (rango 1–tamaño).  
 - Muestra ambos arrays, los valores mínimo y máximo de cada uno, y el MCD entre los valores del array par (mínimo y máximo).
 
 ## Estructura del Código  
@@ -25,7 +25,7 @@ El usuario introduce el tamaño del array impar (>0) con gestión de errores.
 
 ├── fillOdds(odds[]) → Rellena con números impares aleatorios (5–50) usando *do-while* 
 
-├── fillEvens(evens[]) → Rellena con números pares aleatorios (5–50) usando *do-while*
+├── fillEvens(evens[]) → Rellena con números pares aleatorios (1-evens.lenght) usando *do-while*
 
 ├── showArray(array[]) → Imprime en formato "[índice]=valor | "  
 
@@ -61,10 +61,10 @@ El máximo común divisor de 6 y 4 es: 2
 
 ## Características Principales  
 - **Validación de entrada** para prevenir datos no numéricos.  
-- **Rangos coherentes** (5–50) para ambos arrays.  
+- **Rangos coherentes** 5-50 para el Array de impares, 1-tamaño para el array de numeros pares  
 - **Cálculos almacenados** con variables evensSmall y evensGreat.  
 
 ---
 
 **Autor:** [Javier Cervera Rodríguez] | Estudiante DAM | UFV  
-**Versión:** 3.0 | 20 de diciembre de 2025  
+**Versión:** 4.0 | 20 de diciembre de 2025  

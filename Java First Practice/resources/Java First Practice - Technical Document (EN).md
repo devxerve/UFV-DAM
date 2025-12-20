@@ -1,7 +1,7 @@
 # Array Generator - Odd & Even Numbers
 **Java Practice | Universidad Francisco de Vitoria**
 ## Description
-Generates two arrays: **odd numbers** (random 5-50 range) and **even numbers** (5-50 range, sized by odd array's minimum value). Displays both arrays with indexed format, min/max values for each, and GCD between even array's min/max using Euclid's algorithm.
+Generates two arrays: **odd numbers** (random 5-50 range) and **even numbers** (1-size range, sized by odd array's minimum value). Displays both arrays with indexed format, min/max values for each, and GCD between even array's min/max using Euclid's algorithm.
 
 ## How It Works
 
@@ -11,7 +11,7 @@ Fills odd array with random odd numbers (5-50)
 
 Even array size = smallest odd number found
 
-Fills even array with random even numbers (5-50)
+Fills even array with random even numbers (1-evens.lenght)
 
 Shows both arrays, min/max per array, GCD(even_min, even_max)
 
@@ -26,7 +26,7 @@ Main.java (200 lines, 9 methods)
 
 ├── fillOdds(odds[]) → Fills with random odds 5-50 using do-while
 
-├── fillEvens(evens[]) → Fills with random evens 5-50 using do-while
+├── fillEvens(evens[]) → Fills with random evens 1-evens.lenght using do-while
 
 ├── showArray(array[]) → Prints "[index]=value | " format
 
@@ -61,8 +61,8 @@ The greatest common divisor of 6 and 4 is: 2
 
 ## Key Features
 - **Input validation** catches non-numeric input
-- **Consistent ranges** 5-50 for both arrays  
+- **Consistent ranges** 5-50 for Odds Array, 1-Lenght of the evens array for the evens Array  
 - **Cached calculations** evensSmall/evensGreat variables
 ---
 **Author:** [Javier Cervera Rodríguez] | DAM Student | UFV  
-**Version:** 3.0 | Dec 20, 2025
+**Version:** 4.0 | Dec 20, 2025

@@ -5,15 +5,17 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Academy {
-static final int INI_INT = 0;
-static final String SEPARATOR = "-----------------";
+static final int INI_INT = 0; // Constant made in order to initialize all integer variables
+static final String SEPARATOR = "-----------------"; // Visual separator between console sections.
 	public static int readInt(Scanner input) {
 		
-		/* This method asks for an integer input, and if the input is not an integer it catches the exception
-		 * and sets the variable output to -1 (that will be the control), also if the input is negative it will
-		 * ask for the input again. The method wont finish until a positive integer value is inserted
+		/* Reads an integer from input.
+		 * If the user enters a non‑integer or a negative value,
+		 * the method shows an error message and asks again.
+		 * It only returns once a positive integer has been provided.
 		 */
-				
+
+
 		int output = INI_INT;
 		do {
 			try {
@@ -35,7 +37,7 @@ static final String SEPARATOR = "-----------------";
 	public static void main(String[] args) {
 		
 		//Objects declaration
-			Scanner input = new Scanner (System.in);
+			Scanner input = new Scanner(System.in);
 			ArrayList<It> list_It = new ArrayList<It>();
 			ArrayList<Education> list_Education = new ArrayList<Education>();
 		
@@ -46,30 +48,34 @@ static final String SEPARATOR = "-----------------";
 		// Instructions
 			
 			do {
-				System.out.println("Type a number between 1-4 to choose an option \n1) Create an It Class \n2) Create an education class \n3) Show classes summary \n4) Exit");
+				System.out.println("Enter a number between 1-4 to choose an option \n1) Create an IT classroom \n2) Create an Education classroom \n3) Show classes summary \n4) Exit");
 				option = readInt(input);
 				switch (option) {
 
 				case 1:
-					System.out.println("You chose to create an It Class \n Introduce the number of computers you want to install in the class (0 is default (12 pcs)");
+					System.out.println("You chose to create an IT classroom \n Enter the number of computers you want to install in the class (0 is default (12 pcs)");
 					computers = readInt(input);
-					System.out.println("You may now introduce the number of students you want to put into the class");
+					System.out.println("You may now enter the number of students you want to put into the class");
 					students = readInt(input);
 					list_It.add(new It(students, computers));
 					list_It.getLast().getInfo();
 					System.out.println(SEPARATOR);
 					break;
 				case 2:
-					System.out.println("You chose to create an Education Class");
-					System.out.println("You may now introduce the number of students you want to put into the class");
+					System.out.println("You chose to create an Education classroom");
+					System.out.println("You may now enter the number of students you want to put into the class");
 					students = readInt(input);
 					list_Education.add(new Education(students));
 					list_Education.getLast().getInfo();
 					System.out.println(SEPARATOR);
 					break;
 				case 3:
-					if ((list_Education.size() == 0) && (list_It.size() == 0)) {
-						System.out.println("There is no classes to show in the summary");
+					
+					// Before showing the summary, check that at least one list is not empty.
+
+					
+					if ((list_Education.size() == 0) && (list_It.size() == 0)) { 
+						System.out.println("There are no classes to show in the summary");
 					}else {
 						System.out.println("**** Class Summary ****");
 						for (It it : list_It) {
@@ -85,13 +91,16 @@ static final String SEPARATOR = "-----------------";
 					break;
 				case 4:
 					
-					/* Both the static variables relocatedStudents are being summed 
-					 * in order to being outputed to give more information when ending the program
+					/* Sums relocatedStudents from both classes
+					 * to show the total number of relocated students when exiting.
 					 */
+
+					
 					relocatedStudents = It.relocatedStudents + Education.relocatedStudents; 
 					System.out.println("Students to relocate = " + relocatedStudents);
 					System.out.println(SEPARATOR);
 					break;
+					
 				default:
 					System.out.println("A number between 1-4 was expected, you may try again");
 					System.out.println(SEPARATOR);

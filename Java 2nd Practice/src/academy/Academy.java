@@ -4,15 +4,24 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/** Main class that manages different types of classrooms (It and Education)
+ *  @author [DevXervE &lt;aviercerverarodriguez@gmail.com&gt;]
+ *  @version 1.0
+ */
+
 public class Academy {
-	/** Main class that manages different types of classrooms (It and Education)
-	 *  @author DevXervE &lt;aviercerverarodriguez@gmail.com&gt;
-	 *  @version 1.0
-	 *  @param INI_INT Constant made in order to initialize all integer variables in the code
-	 *  @param DIVIDER Constant made to separate prints visually during the code
+	
+	/**
+	 * Constant made in order to initialize all integer variables in the code.
 	 */
-static final int INI_INT = 0; 
-static final String DIVIDER = "-----------------"; 
+	
+	static final int INI_INT = 0; 
+	
+	/**
+	 * Constant made in order to visually separate prints on the console
+	 */
+	
+	static final String DIVIDER = "-----------------"; 
 
 	/** 
 	 * Reads an input from standard input using a Scanner Object
@@ -21,6 +30,7 @@ static final String DIVIDER = "-----------------";
 	 * @param input Scanner made for user input
 	 * @return Positive integer
 	 */
+	
 	public static int readInt(Scanner input) {
 		int output = INI_INT;
 		do {
@@ -52,7 +62,6 @@ static final String DIVIDER = "-----------------";
 	 * 
 	 * @param args Command-line arguments (not used).
 	 */
-
 	
 	public static void main(String[] args) {
 		
